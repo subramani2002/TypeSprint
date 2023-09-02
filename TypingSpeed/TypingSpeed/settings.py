@@ -74,12 +74,12 @@ WSGI_APPLICATION = 'TypingSpeed.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'URL': 'postgresql://postgres:IioY1XAFzx8KmvIGaici@containers-us-west-138.railway.app:6666/railway',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'IioY1XAFzx8KmvIGaici',
-        'HOST': 'containers-us-west-138.railway.app',
-        'PORT': 6666,
+        'URL': os.getenv('POSTGRES_URL'),
+        'NAME': os.getenv('PGNAME'),
+        'USER': os.getenv('PGUSER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('PGHOST'),
+        'PORT': os.getenv('PGPORT),
     }
 }
 
