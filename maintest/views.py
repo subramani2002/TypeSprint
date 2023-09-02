@@ -102,7 +102,7 @@ def dashboard(request):
 
     type_results = Student.objects.order_by('-cpm', '-accuracy', '-wpm')
     if filter_value == 'basic':
-        type_results = type_results.filter(class_choice__range=(6, 10))
+        type_results = type_results.filter(class_choice__range=(6, 11))
     elif filter_value == 'intermediate':
         type_results = type_results.filter(class_choice__in=[11, 12])
 
